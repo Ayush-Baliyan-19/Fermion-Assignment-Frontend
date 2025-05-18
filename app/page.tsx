@@ -15,7 +15,9 @@ export default function Home() {
     setIsLoading(true);
 
     try {
-      const res = await fetch(`http://localhost:5000/api/stream-count`);
+      const res = await fetch(
+        `https://fermion-assignment-backend.onrender.com/api/stream-count`
+      );
       const { activeStreamers } = await res.json();
 
       if (role === USER_ROLE.streamer && activeStreamers >= 2) {
